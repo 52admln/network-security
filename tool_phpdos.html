@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="cn">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            常用工具-PHPDos
+        </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="王蓥杰">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/other.css" rel="stylesheet">
+        <script>
+            var _hmt = _hmt || [];
+        </script>
+        <!--HTML5 shim,for IE6-8 support of HTML5 elements-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js">
+            </script>
+        <![endif]-->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="ico/favicon.png">
+    </head>
+    
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </button>
+                    <a class="brand" href="index.html">
+                        网络安全专题网页制作
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="internet_js.html">
+                                    简介
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    网络安全
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="s_dos.html">
+                                            DoS攻击与防范
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="s_cc.html">
+                                            CC的攻击与防范
+                                        </a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li class="nav-header">
+                                        常见工具
+                                    </li>
+                                    <li>
+                                        <a href="tool_phpdos.html">
+                                            PHPDos
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    网络犯罪
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="fanzui_gn.html">
+                                            概念及特点
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="fanzui_fl.html">
+                                            法律认定
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="fanzui_dx.html">
+                                            网络诈骗
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="anli.html">
+                                    案例
+                                </a>
+                            </li>
+                                <li>
+                                <a href="vedio.html">
+                                    视频观看
+                                </a>
+                                </li>
+                            <li>
+                                <a href="about.html">
+                                    关于
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav affix">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+                                网络安全
+                            </li>
+                            <li>
+                                <a href="s_dos.html">
+                                    DoS攻击与防范
+                                </a>
+                            </li>
+                            <li>
+                                <a href="s_cc.html">
+                                    CC的攻击与防范
+                                </a>
+                            </li>
+                            <li class="nav-header">
+                                常见工具
+                            </li>
+                            <li class="active">
+                                <a href="tool_phpdos.html">
+                                    PHPDos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.well-->
+                </div>
+                <!--/span-->
+                <div class="span9">
+                    <div class="hero-unit">
+                        <h1>
+                            PHPDos工具范例
+                        </h1>
+                        <hr/>
+                        <h2>
+                            法律依据：
+                        </h2>
+                        <hr/>
+                        <p class="text-info">
+                            DDOS攻击行为触犯《中华人民共和国刑法》第二百八十五条、二百八十六条、《中华人民共和国刑法修正案(七)》的相关法律规定，具体如下：
+                        </p>
+                        <p class="text-error">
+                            ●第二百八十五条：
+                        </p>
+                        <p>
+                            违反国家规定，侵入国家事务、国防建设、尖端科学技术领域的计算机信息系统的，处三年以下有期徒刑或者拘役。
+                        </p>
+                        <p class="text-error">
+                            ●《中华人民共和国刑法修正案(七)》：
+                        </p>
+                        在刑法第二百八十五条中增加两款作为第二款、第三款：违反国家规定，侵入前款规定以外的计算机信息系统或者采用其他技术手段，获取该计算机信息系统中存储、处理或者传输的数据，或者对该计算机信息系统实施非法控制，情节严重的，处三年以下有期徒刑或者拘役，并处或者单处罚金；情节特别严重的，处三年以上七年以下有期徒刑，并处罚金。
+                        </p>
+                        <p>
+                            提供专门用于侵入、非法控制计算机信息系统的程序、工具，或者明知他人实施侵入、非法控制计算机信息系统的违法犯罪行为而为其提供程序、工具，情节严重的，依照前款的规定处罚。
+                        </p>
+                        <p class="text-error">
+                            ●第二百八十六条：
+                        </p>
+                        违反国家规定，对计算机信息系统功能进行删除、修改、增加、干扰，造成计算机信息系统不能正常运行，后果严重的，处五年以下有期徒刑或者拘役；后果特别严重的，处五年以上有期徒刑。
+                        </p>
+                        <p>
+                            违反国家规定，对计算机信息系统中存储、处理或者传输的数据和应用程序进行删除、修改、增加的操作，后果严重的，依照前款的规定处罚。
+                        </p>
+                        故意制作、传播计算机病毒等破坏性程序，影响计算机系统正常运行，后果严重的，依照第一款的规定处罚。
+                        </p>
+                        <h2>
+                            源码地址：
+                        </h2>
+                        <hr/>
+                        <div>
+                            <p class="text-info">
+                                首先，如果是运行在PHP环境下的空间，那么可以直接打开这个页面浏览到这个PHPDOS工具,再次强调说明，请勿用于非法用途。仅供学习参考！
+                            </p>
+                            <br>
+                            <br>
+                            <a href="phpdos/index.php" class="btn btn-large btn-primary">
+                                PHPDoS Tool
+                            </a>
+                            <br>
+                            <br>
+                            <br>
+                            <img src="img/phpdos.png" class="img-polaroid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="container marketing">
+            <hr class="featurette-divider">
+            <!--Footer==================================================-->
+            <footer class="footer">
+                <div class="container">
+                    <p class="pull-right">
+                        <a href="#">
+                            Back to top
+                        </a>
+                    </p>
+                    <p>
+                        &copy;2013网络安全专题网页制作.&middot;Designed by王蓥杰&middot;
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <script src="js/jquery.min.js">
+        </script>
+        <script src="js/bootstrap.min.js">
+        </script>
+        <script>
+            !
+            function($) {
+                $(function() {
+                    $('#myCarousel').carousel()
+                })
+            } (window.jQuery)
+        </script>
+        <script src="js/holder/holder.js">
+        </script>
+    </body>
+
+</html>

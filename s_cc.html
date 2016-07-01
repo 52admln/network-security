@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="cn">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            CC的攻击与防范
+        </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="王蓥杰">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/other.css" rel="stylesheet">
+        <script>
+            var _hmt = _hmt || [];
+        </script>
+        <!--HTML5 shim,for IE6-8 support of HTML5 elements-->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js">
+            </script>
+        <![endif]-->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="ico/favicon.png">
+    </head>
+    
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                        <span class="icon-bar">
+                        </span>
+                    </button>
+                    <a class="brand" href="index.html">
+                        网络安全专题网页制作
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="index.html">
+                                    首页
+                                </a>
+                            </li>
+                            <li>
+                                <a href="internet_js.html">
+                                    简介
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    网络安全
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="s_dos.html">
+                                            DoS攻击与防范
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="s_cc.html">
+                                            CC的攻击与防范
+                                        </a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li class="nav-header">
+                                        常见工具
+                                    </li>
+                                    <li>
+                                        <a href="tool_phpdos.html">
+                                            PHPDos
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    网络犯罪
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="fanzui_gn.html">
+                                            概念及特点
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="fanzui_fl.html">
+                                            法律认定
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="fanzui_dx.html">
+                                            网络诈骗
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="anli.html">
+                                    案例
+                                </a>
+                            </li>
+                                <li>
+                                <a href="vedio.html">
+                                    视频观看
+                                </a>
+                                </li>
+                            <li>
+                                <a href="about.html">
+                                    关于
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav affix">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">
+                                网络安全
+                            </li>
+                            <li>
+                                <a href="s_dos.html">
+                                    DoS攻击与防范
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="s_cc.html">
+                                    CC的攻击与防范
+                                </a>
+                            </li>
+                            <li class="nav-header">
+                                常见工具
+                            </li>
+                            <li>
+                                <a href="tool_phpdos.html">
+                                    PHPDos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.well-->
+                </div>
+                <!--/span-->
+                <div class="span9">
+                    <div class="hero-unit">
+                        <h1>
+                            CC攻击与防范
+                        </h1>
+                        <hr/>
+                        <h2>
+                            简介：
+                        </h2>
+                        <hr/>
+                        <div>
+                            <p>
+                                CC主要是用来攻击页面的.大家都有这样的经历,就是在访问论坛时,如果这个论坛比较大,访问的人比较多,打开页面的速度会比较慢,访问的人越多,论坛的页面越多,数据库就越大,被访问的频率也越高,占用的系统资源也就相当可观。
+                            </p>
+                            <p>
+                                一个静态页面不需要服务器多少资源,甚至可以说直接从内存中读出来发给你就可以了,但是论坛就不一样了,我看一个帖子,系统需要到数据库中判断我是否有读读帖子的权限,如果有,就读出帖子里面的内容,显示出来——这里至少访问了2次数据库,如果数据库的体积有200MB大小,系统很可能就要在这200MB大小的数据空间搜索一遍,这需要多少的CPU资源和时间?如果我是查找一个关键字,那么时间更加可观,因为前面的搜索可以限定在一个很小的范围内,比如用户权限只查用户表,帖子内容只查帖子表,而且查到就可以马上停止查询,而搜索肯定会对所有的数据进行一次判断,消耗的时间是相当的大.
+                            </p>
+                            <p>
+                                CC就是充分利用了这个特点,模拟多个用户(多少线程就是多少用户)不停的进行访问(访问那些需要大量数据操作,就是需要大量CPU时间的页面).这一点用一个一般的性能测试软件就可以做到大量模拟用户并发。
+                            </p>
+                            <p>
+                                假设服务器A对Search.asp的处理时间需要0.01S(多线程只是时间分割,对结论没有影响),也就是说他一秒可以保证100个用户的Search请求,服务器允许的最大连接时间为60s,那么使用CC模拟120个用户并发连接,那么经过1分钟,服务器的被请求了7200次,处理了6000次,于是剩下了1200个并发连接没有被处理.有的朋友会说:丢连接!丢连接!问题是服务器是按先来后到的顺序丢的,这1200个是在最后10秒的时候发起的,想丢?!还早,经过计算,服务器满负开始丢连接的时候,应该是有7200个并发连接存在队列,然后服务器开始120个/秒的丢连接,发动的连接也是120个/秒,服务器永远有处理不完的连接,服务器的CPU
+                                100%并长时间保持,然后丢连接的60秒服务器也判断处理不过来了,新的连接也处理不了,这样服务器达到了超级繁忙状态.
+                            </p>
+                            <p>
+                                假设服务器处理Search只用了0.01S,也就是10毫秒(这个速度你可以去各个有开放时间显示的论坛看看),使用的线程也只有120,很多服务器的丢连接时间远比60S长,使用线程远比120多,可以想象可怕了吧,而且客户机只要发送了断开,连接的保持是代理做的,而且当服务器收到SQL请求,肯定会进入队列,不论连接是否已经断开,而且服务器是并发的,不是顺序执行,这样使得更多的请求进入内存请求,对服务器负担更大.
+                            </p>
+                            <br>
+                        </div>
+                        <p>
+                            &nbsp;
+                        </p>
+                        <h2 index="2">
+                            名称起源：
+                        </h2>
+                        <hr/>
+                        <div>
+                            <p>
+                                CC=Challenge Collapsar，其前身名为Fatboy攻击，是利用不断对网站发送连接请求致使形成拒绝服务的目的，
+                            </p>
+                            <p>
+                                CC攻击是DDOS（分布式拒绝服务）的一种，相比其它的DDOS攻击CC似乎更有技术含量一些。这种攻击你见不到真实源IP，见不到特别大的异常流量，但造成服务器无法进行正常连接。最让站长们忧虑的是这种攻击技术含量低，利用更换IP代理工具和一些IP代理一个初、中级的电脑水平的用户就能够实施攻击。因此，大家有必要了解CC攻击的原理及如果发现CC攻击和对其的防范措施。
+                            </p>
+                            <br>
+                        </div>
+                        <p>
+                            &nbsp;
+                        </p>
+                        <h2 index="3">
+                            CC攻击的原理：
+                        </h2>
+                        <hr/>
+                        <div>
+                            CC攻击的原理就是攻击者控制某些主机不停地发大量数据包给对方服务器造成服务器资源耗尽，一直到宕机崩溃。CC主要是用来攻击页面的，每个人都有这样的体验：当一个网页访问的人数特别多的时候，打开网页就慢了，CC就是模拟多个用户（多少线程就是多少用户）不停地进行访问那些需要大量数据操作（就是需要大量CPU时间）的页面，造成服务器资源的浪费，CPU长时间处于100%，永远都有处理不完的连接直至就网络拥塞，正常的访问被中止。
+                            <br>
+                            <img src="img/4.jpg" class="img-polaroid">
+                            <br>
+                        </div>
+                        <br>
+                        <h2 index="4">
+                            防CC攻击：
+                        </h2>
+                        <hr/>
+                        <div>
+                            &nbsp;&nbsp;
+                            <p>
+                                CC攻击可以归为DDoS攻击的一种。他们之间的原理都是一样的，即发送大量的请求数据来导致服务器拒绝服务，是一种连接攻击。CC攻击又可分为代理CC攻击，和肉鸡CC攻击。代理CC攻击是黑客借助代理服务器生成指向受害主机的合法网页请求，实现DOS，和伪装就叫：cc（Challenge
+                                Collapsar）。而肉鸡CC攻击是黑客使用CC攻击软件，控制大量肉鸡，发动攻击，相比来后者比前者更难防御。因为肉鸡可以模拟正常用户访问网站的请求。伪造成合法数据包。
+                            </p>
+                            <p>
+                                一个静态页面不需要服务器多少资源，甚至可以说直接从内存中读出来发给你就可以了，但是论坛之类的动态网站就不一样了，我看一个帖子，系统需要到数据库中判断我是否有读帖子的权限，如果有，就读出帖子里面的内容，显示出来——这里至少访问了2次数据库，如果数据库的体积有200MB大小，系统很可能就要在这200MB大小的数据空间搜索一遍，这需要多少的CPU资源和时间？如果我是查找一个关键字，那么时间更加可观，因为前面的搜索可以限定在一个很小的范围内，比如用户权限只查用户表，帖子内容只查帖子表，而且查到就可以马上停止查询，而搜索肯定会对所有的数据进行一次判断，消耗的时间是相当的大。
+                            </p>
+                            <p>
+                                CC攻击就是充分利用了这个特点，模拟多个用户（多少线程就是多少用户）不停的进行访问（访问那些需要大量数据操作，就是需要大量CPU时间的页面，比如asp/php/jsp/cgi）。很多朋友问到，为什么要使用代理呢？因为代理可以有效地隐藏自己的身份，也可以绕开所有的防火墙，因为基本上所有的防火墙都会检测并发的TCP/IP连接数目，超过一定数目一定频率就会被认为是Connection-Flood。当然也可以使用肉鸡发动CC攻击。肉鸡的CC攻击效果更可观。致使服务器CPU%100，甚至死机的现象。
+                            </p>
+                            <p>
+                                使用代理攻击还能很好的保持连接，这里发送了数据，代理转发给对方服务器，就可以马上断开，代理还会继续保持着和对方连接（我知道的记录是有人利用2000个代理产生了35万并发连接）。
+                            </p>
+                            <p>
+                                当然，CC也可以利用这里方法对FTP、游戏端口、聊天房间等进行攻击，也可以实现TCP-FLOOD，这些都是经过测试有效的。
+                            </p>
+                            <p>
+                                <strong>
+                                    防御CC攻击可以通过多种方法，禁止网站代理访问，尽量将网站做成
+                                </strong>
+                                <strong>
+                                    静态页面
+                                </strong>
+                                <strong>
+                                    ，限制连接数量等。
+                                </strong>
+                            </p>
+                        </div>
+                        <br>
+                        <h2 index="5">
+                            攻击症状：
+                        </h2>
+                        <hr/>
+                        <div>
+                            <p>
+                                CC攻击有一定的隐蔽性，那如何确定服务器正在遭受或者曾经遭受CC攻击呢?可以通过以下三个方法来确定。
+                            </p>
+                            <h3 index="5_1">
+                                命令行法
+                            </h3>
+                            <p>
+                                一般遭受CC攻击时，Web服务器会出现80端口对外关闭的现象，因为这个端口已经被大量的垃圾数据堵塞了正常的连接被中止了。可以通过在命令行下输入命令netstat-an来查看，&ldquo;SYN_RECEIVED&rdquo;是TCP连接状态标志，意思是&ldquo;正在处于连接的初始同步状态&rdquo;，表明无法建立握手应答处于等待状态。这就是攻击的特征，一般情况下这样的记录一般都会有很多条，表示来自不同的代理IP的攻击。
+                            </p>
+                            <h3 index="5_2">
+                                批处理法
+                            </h3>
+                            <p>
+                                上述方法需要手工输入命令且如果Web服务器IP连接太多看起来比较费劲，可以建立一个批处理文件，通过该脚本代码确定是否存在CC攻击。打开记事本键入如下代码保存为CC.bat：
+                            </p>
+                            <p>
+                                @echo off
+                            </p>
+                            <p>
+                                time/t&gt;&gt;log.log
+                            </p>
+                            <p>
+                                netstat-n-p tcp|find":80"&gt;&gt;Log.log
+                            </p>
+                            <p>
+                                notepad log.log
+                            </p>
+                            <p>
+                                exit
+                            </p>
+                            <p>
+                                上面的脚本的含义是筛选出当前所有的到80端口的连接。当感觉服务器异常是就可以双击运行该批处理文件，然后在打开的log.log文件中查看所有的连接。如果同一个IP有比较多的到服务器的连接，那就基本可以确定该IP正在对服务器进行CC攻击
+                            </p>
+                            <h3 index="5_3">
+                                查看系统日志
+                            </h3>
+                            <p>
+                                Web日志一般在C:\WINDOWS\system32\LogFiles\HTTPERR目录下，该目录下用类似httperr1.log的日志文件，这个文件就是记录Web访问错误的记录。管理员可以依据日志时间属性选择相应的日志打开进行分析是否Web被CC攻击了。
+                            </p>
+                            <p>
+                                默认情况下，Web日志记录的项并不是很多，可以通过ⅡS进行设置，让Web日志记录更多的项以便进行安全分析。其操作步骤是：&ldquo;开始→管理工具&rdquo;打开&ldquo;Internet信息服务器&rdquo;，展开左侧的项定位到到相应的Web站点，然后右键点击选择&ldquo;属性&rdquo;打开站点属性窗口，在&ldquo;网站&rdquo;选项卡下点击&ldquo;属性&rdquo;按钮，在&ldquo;日志记录属性&rdquo;窗口的&ldquo;高级&rdquo;选项卡下可以勾选相应的&ldquo;扩展属性&rdquo;，以便让Web日志进行记录。比如其中的&ldquo;发送的字节数&rdquo;、&ldquo;接收的字节数&rdquo;、&ldquo;所用时间&rdquo;这三项默认是没有选中的，但在记录判断CC攻击中是非常有用的，可以勾选。另外，如果你对安全的要求比较高，可以在&ldquo;常规&rdquo;选项卡下对&ldquo;新日志计划&rdquo;进行设置，让其&ldquo;每小时&rdquo;或者&ldquo;每一天&rdquo;进行记录。为了便于日后进行分析时好确定时间可以勾选&ldquo;文件命名和创建使用当地时间&rdquo;。
+                            </p>
+                            <br>
+                        </div>
+                        <h2 index="6">
+                            解决方式：
+                        </h2>
+                        <hr/>
+                        <div>
+                            <h3 index="6_4">
+                                取消域名绑定
+                            </h3>
+                            <p>
+                                一般cc攻击都是针对网站的域名进行攻击，比如网站域名是&ldquo;xxx&rdquo;，那么攻击者就在攻击工具中设定攻击对象为该域名然后实施攻击。
+                            </p>
+                            <p>
+                                对于这样的攻击措施是在ⅡS上取消这个域名的绑定，让CC攻击失去目标。具体操作步骤是：打开&ldquo;ⅡS管理器&rdquo;定位到具体站点右键&ldquo;属性&rdquo;打开该站点的属性面板，点击IP地址右侧的&ldquo;高级&rdquo;按钮，选择该域名项进行编辑，将&ldquo;主机头值&rdquo;删除或者改为其它的值（域名）。
+                            </p>
+                            <p>
+                                实例模拟测试，取消域名绑定后Web服务器的CPU马上恢复正常状态，通过IP进行访问连接一切正常。但是不足之处也很明显，取消或者更改域名对于别人的访问带来了不便，另外，对于针对IP的CC攻击它是无效的，就算更换域名攻击者发现之后，他也会对新域名实施攻击。
+                            </p>
+                            <h3 index="6_5">
+                                域名欺骗解析
+                            </h3>
+                            <p>
+                                如果发现针对域名的CC攻击，可以把被攻击的域名解析到127.0.0.1这个地址上。知道127.0.0.1是本地回环IP是用来进行网络测试的，如果把被攻击的域名解析到这个IP上，就可以实现攻击者自己攻击自己的目的，这样他再多的肉鸡或者代理也会宕机，让其自作自受。另外，当Web服务器遭受CC攻击时把被攻击的域名解析到国家有权威的政府网站或者是网警的网站，让其网警来收拾他们。现在一般的Web站点都是利用类似&ldquo;新网&rdquo;这样的服务商提供的动态域名解析服务，大家可以登录进去之后进行设置。
+                            </p>
+                            <h3 index="6_6">
+                                更改Web端口
+                            </h3>
+                            <p>
+                                一般情况下Web服务器通过80端口对外提供服务，因此攻击者实施攻击就以默认的80端口进行攻击，所以，我们可以修改Web端口达到防CC攻击的目的。运行ⅡS管理器，定位到相应站点，打开站点&ldquo;属性&rdquo;面板，在&ldquo;网站标识&rdquo;下有个TCP端口默认为80，我们修改为其他的端口就可以了。
+                            </p>
+                            <h3 index="6_7">
+                                ⅡS屏蔽IP
+                            </h3>
+                            <p>
+                                我们通过命令或在查看日志发现了CC攻击的源IP，就可以在ⅡS中设置屏蔽该IP对Web站点的访问，从而达到防范ⅡS攻击的目的。在相应站点的&ldquo;属性&rdquo;面板中，点击&ldquo;目录安全性&rdquo;选项卡，点击&ldquo;IP地址和域名现在&rdquo;下的&ldquo;编辑&rdquo;按钮打开设置对话框。在此窗口中我们可以设置&ldquo;授权访问&rdquo;也就是&ldquo;白名单&rdquo;，也可以设置&ldquo;拒绝访问&rdquo;即&ldquo;黑名单&rdquo;。比如我们可以将攻击者的IP添加到&ldquo;拒绝访问&rdquo;列表中，就屏蔽了该IP对于Web的访问。
+                            </p>
+                            <h3 index="6_8">
+                                IPSec封锁
+                            </h3>
+                            <p>
+                                IPSec是优秀的系统防火墙，在排除其他还有别的类型的DDOS攻击时，针对CC攻击可以用设置IP策略来对付攻击。以219.128.*.43这个IP为例子，笔者实际操作对该IP的访问封锁。
+                            </p>
+                            <p>
+                                第一步：&ldquo;开始→管理工具&rdquo;，打开&ldquo;本地安全设置&rdquo;，右键点击&ldquo;IP安全策略，在本地机器&rdquo;选择&ldquo;创建IP安全策略&rdquo;，然后点击&ldquo;下一步&rdquo;，输入策略&ldquo;名称&rdquo;和&ldquo;描述&rdquo;。然后默认一路&ldquo;下一步&rdquo;创建了一个名为&ldquo;封CC攻击&rdquo;的IPSec策略。
+                            </p>
+                            <p>
+                                第二步：右键点击&ldquo;IP安全策略，在本地机器&rdquo;选择&ldquo;管理IP筛选器表和筛选器操作&rdquo;，在打开的窗口中点&ldquo;添加&rdquo;，在&ldquo;IP筛选器列表&rdquo;窗口添人同第一步的名称和描述信息。取消&ldquo;使用添加向导&rdquo;的勾选，然后点击&ldquo;添加&rdquo;。在&ldquo;IP筛选器属性&rdquo;窗口的&ldquo;地址&rdquo;选项下设置&ldquo;源地址&rdquo;为&ldquo;192.168.1.6&rdquo;，目标地址为&ldquo;我的IP地址&rdquo;，取消对&ldquo;镜像&rdquo;的勾选；点击&ldquo;协议&rdquo;选项卡，设置&ldquo;协议类型&rdquo;为&ldquo;TCP&rdquo;，设置&ldquo;协议端口&rdquo;为&ldquo;从任意端口&rdquo;到&ldquo;此端口80&rdquo;最后确定退出。
+                            </p>
+                            <p>
+                                第三步：在&ldquo;新规则属性&rdquo;窗口中点选刚才创建的&ldquo;封CC攻击&rdquo;规则，点击&ldquo;筛选器操作&rdquo;选项卡下的&ldquo;添加&rdquo;，点选&ldquo;安全措施&rdquo;下的&ldquo;阻止&rdquo;，在&ldquo;常规&rdquo;选项卡下为该筛选器命名为&ldquo;阻止CC攻击&rdquo;然后确定退出。
+                            </p>
+                            <p>
+                                第四步：点选刚才创建的&ldquo;阻止CC攻击&rdquo;筛选器，一路&ldquo;确定&rdquo;退出IP策略编辑器，可以看到在组策略窗口的中创建成功一个名为&ldquo;封CC攻击&rdquo;的策略，然后右键点击该策略选择&ldquo;指派&rdquo;。这样就实现了对该IP的封锁。
+                            </p>
+                            <h3 index="6_9">
+                                防火墙
+                            </h3>
+                            <p>
+                                除了利用上述方法外，还可以通过第三方的防火墙进行防范，打开防护墙防火墙可以了，笔者以天鹰ddos防火墙为例进行演示。安装好天鹰ddos防火墙即可开启防护，傻瓜式配置界面，默认参数即可防护网站，误封较少，智能识别蜘蛛。
+                            </p>
+                            <h3 index="6_10">
+                                防CC攻击
+                            </h3>
+                            <p>
+                                使用加速乐云防火墙，若遇到CC攻击时，将自动启动，可以在2分钟内快速确定攻击IP，并封锁IP，完全拦截CC攻击。
+                            </p>
+                            <br>
+                        </div>
+                        <h2 index="7">
+                            总结：
+                        </h2>
+                        <hr/>
+                        <div>
+                            总体说来cc攻击属于技术技巧强的攻击，防护手段足以解决诸如此类的攻击，然而带给我们巨大的挑战的是巨型流量的攻击，在带宽资源紧缺的情况下任何的防护措施都会消耗很大的成本，我们期待不久的云概念被炒作的沸沸扬扬，至于能否起到实实在在的作用就不可而知了。希望上述文档给您帮助。
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="container marketing">
+            <hr class="featurette-divider">
+            <!--Footer==================================================-->
+            <footer class="footer">
+                <div class="container">
+                    <p class="pull-right">
+                        <a href="#">
+                            Back to top
+                        </a>
+                    </p>
+                    <p>
+                        &copy;2013网络安全专题网页制作.&middot;Designed by王蓥杰&middot;
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <script src="js/jquery.min.js">
+        </script>
+        <script src="js/bootstrap.min.js">
+        </script>
+        <script>
+            !
+            function($) {
+                $(function() {
+                    $('#myCarousel').carousel()
+                })
+            } (window.jQuery)
+        </script>
+        <script src="js/holder/holder.js">
+        </script>
+    </body>
+
+</html>
